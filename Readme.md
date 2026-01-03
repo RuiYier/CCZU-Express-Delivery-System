@@ -7,7 +7,7 @@
 - **后端**: 基于 Go (Gin) + PostgreSQL 开发，提供高性能的 API 服务。
 - **前端**: 基于 Vue 3 + TypeScript + Vite 开发，提供现代化的用户交互体验。
 
-## 🏗 系统架构
+##  系统架构
 
 ```
 cczu_expressdelivery_system/
@@ -52,7 +52,7 @@ npm run dev
 
 前端应用默认运行在 `http://localhost:7999`
 
-## 📡 API对接说明
+##  API对接说明
 
 前端通过 Axios 与后端 API 通信，配置位于 `web/src/api/client.ts`。
 开发环境下，Vite 配置了代理 (`vite.config.ts`) 转发 `/api` 请求至后端服务器。
