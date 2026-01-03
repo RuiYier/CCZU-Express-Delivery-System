@@ -1,0 +1,34 @@
+# OS specific
+.DS_Store
+Thumbs.db
+
+# IDEs
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Go (Server)
+/server/*.exe
+/server/*.dll
+/server/*.so
+/server/*.dylib
+/server/*.test
+/server/vendor/
+/server/go.work
+# Configuration with secrets
+/server/config/config.toml
+
+# Node/Vue (Web)
+/web/node_modules/
+/web/dist/
+/web/npm-debug.log*
+/web/yarn-error.log*
+/web/pnpm-debug.log*
+/web/.env
+/web/.env.local
+/web/.env.*.local
+/web/.eslintcache
+
+# Logs
+*.log
