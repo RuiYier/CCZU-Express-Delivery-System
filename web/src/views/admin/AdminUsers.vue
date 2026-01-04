@@ -98,7 +98,6 @@ const userCount = computed(() => users.value.filter((u) => u.role === 'user').le
 
 const formatTime = (time?: string) => {
   if (!time) return '-'
-  console.log(time)
   const date = new Date(time)
   return date.toLocaleString('zh-CN', {
     year: 'numeric',
@@ -175,12 +174,12 @@ h1 {
 
 .search-box input:focus {
   outline: none;
-  border-color: #f5576c;
+  border-color: #6d70fc;
 }
 
 .btn-refresh {
-  padding: 0.875rem 1.5rem;
-  background: #f5576c;
+  padding: 0.75rem 1.5rem;
+  background: #6d70fc;
   color: white;
   border: none;
   border-radius: 0.5rem;
@@ -191,7 +190,7 @@ h1 {
 }
 
 .btn-refresh:hover {
-  background: #d94558;
+  background: #404dff;
 }
 
 .loading,
@@ -304,7 +303,7 @@ h1 {
 }
 
 .stats strong {
-  color: #f5576c;
+  color: #5c5c5c;
   font-size: 1.2rem;
   margin-left: 0.5rem;
 }

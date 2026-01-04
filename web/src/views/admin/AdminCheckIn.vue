@@ -282,7 +282,7 @@ h1 {
 
 .form-group input:focus {
   outline: none;
-  border-color: #f5576c;
+  border-color: #6d70fc;
 }
 
 .search-results {
