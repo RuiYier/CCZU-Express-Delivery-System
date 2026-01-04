@@ -80,6 +80,14 @@ func RegisterUser(db *gorm.DB, jwtCfg models.JWTConfig) gin.HandlerFunc {
 			return
 		}
 
+		// 生成用户 ID（雪花算法）并设置
+		if id, err := utils.GenerateID(); err == nil {
+			newUser.UserId = id
+		} else {
+			c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to generate user id"})
+			return
+		}
+
 		if err := db.WithContext(ctx).Create(&newUser).Error; err != nil {
 			c.JSON(http.StatusInternalServerError, gin.H{"error": "Database error"})
 			return
