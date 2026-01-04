@@ -162,8 +162,15 @@ func MailPack(db *gorm.DB) gin.HandlerFunc {
 			return
 		}
 
+		// 生成包裹 ID（雪花算法）
+		packId, err := utils.GenerateID()
+		if err != nil {
+			c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to generate pack id"})
+			return
+		}
+
 		newPack := models.Pack{
-			PackId:     utils.Node.Generate().Int64(),
+			PackId:     packId,
 			PackStatus: "in_transit",
 			UserId:     user.UserId,
 		}

@@ -1,0 +1,32 @@
+version: "3.8"
+
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: server/Dockerfile
+    image: packchann-backend:latest
+    container_name: packchann_backend
+    ports:
+      - "8088:8088"
+    restart: unless-stopped
+    volumes:
+      # 将本地配置挂载到容器，方便在开发/部署时通过修改 config.toml 控制数据库等
+      - ./server/config/config.toml:/src/config/config.toml:ro
+    environment:
+      - GIN_MODE=release
+
+  frontend:
+    build:
+      context: .
+      dockerfile: web/Dockerfile
+    image: packchann-frontend:latest
+    container_name: packchann_frontend
+    ports:
+      - "80:80"
+    restart: unless-stopped
+
+networks:
+  default:
+    driver: bridge
+
