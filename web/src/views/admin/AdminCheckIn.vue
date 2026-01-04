@@ -79,7 +79,9 @@
     </div>
 
     <div v-if="successMessage" class="success-card">
-      <div class="success-icon">✅</div>
+      <div class="success-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+      </div>
       <h3>入库成功！</h3>
       <div class="pack-info">
         <p><strong>包裹号:</strong> {{ lastPack?.pack_id }}</p>
@@ -380,7 +382,7 @@ h1 {
 }
 
 .btn-submit {
-  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  background: linear-gradient(135deg, #47b9fc 0%, #2c4bf8 100%);
   color: white;
 }
 

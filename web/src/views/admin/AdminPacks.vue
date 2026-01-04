@@ -15,13 +15,18 @@
         </button>
       </div>
 
-      <button @click="fetchData" class="btn-refresh">🔄 刷新</button>
+      <button @click="fetchData" class="btn-refresh">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 4v6h-6"></path><path d="M1 20v-6h6"></path><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path></svg>
+        刷新
+      </button>
     </div>
 
     <div v-if="isLoading" class="loading">加载中...</div>
 
     <div v-else-if="filteredPacks.length === 0" class="empty">
-      <div class="empty-icon">📭</div>
+      <div class="empty-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-6l-2 3h-4l-2-3H2"></path><path d="M5.45 5.11L2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"></path></svg>
+      </div>
       <p>暂无包裹数据</p>
     </div>
 
@@ -275,19 +280,19 @@ h1 {
 }
 
 .filter-btn:hover {
-  border-color: #f5576c;
-  color: #f5576c;
+  border-color: #5154ff;
+  color: #1b1b1b;
 }
 
 .filter-btn.active {
-  background: #f5576c;
+  background: #6d70fc;
   color: white;
-  border-color: #f5576c;
+  border-color: #636df8;
 }
 
 .btn-refresh {
   padding: 0.75rem 1.5rem;
-  background: #f5576c;
+  background: #6d70fc;
   color: white;
   border: none;
   border-radius: 0.5rem;
@@ -298,7 +303,7 @@ h1 {
 }
 
 .btn-refresh:hover {
-  background: #d94558;
+  background: #404dff;
 }
 
 .loading,

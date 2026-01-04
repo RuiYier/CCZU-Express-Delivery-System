@@ -6,8 +6,7 @@ export interface User {
   phone: string
   address: string
   role: 'user' | 'admin'
-  created_at?: string
-  updated_at?: string
+  register_time?: string
 }
 
 // 登录请求

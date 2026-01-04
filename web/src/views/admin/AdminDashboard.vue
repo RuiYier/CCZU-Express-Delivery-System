@@ -4,7 +4,9 @@
 
     <div class="stats-grid">
       <div class="stat-card">
-        <div class="stat-icon">👥</div>
+        <div class="stat-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+        </div>
         <div class="stat-info">
           <h3>总用户数</h3>
           <p class="stat-value">{{ totalUsers }}</p>
@@ -12,7 +14,9 @@
       </div>
 
       <div class="stat-card">
-        <div class="stat-icon">📦</div>
+        <div class="stat-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+        </div>
         <div class="stat-info">
           <h3>总包裹数</h3>
           <p class="stat-value">{{ totalPacks }}</p>
@@ -20,7 +24,9 @@
       </div>
 
       <div class="stat-card">
-        <div class="stat-icon">📥</div>
+        <div class="stat-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 16 12 14 15 10 15 8 12 2 12"></polyline><path d="M5.45 5.11L2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"></path></svg>
+        </div>
         <div class="stat-info">
           <h3>待取包裹</h3>
           <p class="stat-value">{{ pendingPacks }}</p>
@@ -28,7 +34,9 @@
       </div>
 
       <div class="stat-card">
-        <div class="stat-icon">📤</div>
+        <div class="stat-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+        </div>
         <div class="stat-info">
           <h3>运输中</h3>
           <p class="stat-value">{{ inTransitPacks }}</p>
@@ -40,15 +48,21 @@
       <h2>快捷操作</h2>
       <div class="action-buttons">
         <router-link to="/admin/checkin" class="action-btn">
-          <span class="action-icon">📥</span>
+          <span class="action-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 16 12 14 15 10 15 8 12 2 12"></polyline><path d="M5.45 5.11L2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"></path></svg>
+          </span>
           <span>包裹入库</span>
         </router-link>
         <router-link to="/admin/packs" class="action-btn">
-          <span class="action-icon">📦</span>
+          <span class="action-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+          </span>
           <span>包裹管理</span>
         </router-link>
         <router-link to="/admin/users" class="action-btn">
-          <span class="action-icon">👥</span>
+          <span class="action-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+          </span>
           <span>用户管理</span>
         </router-link>
       </div>
@@ -179,7 +193,7 @@ h1 {
   margin: 0.5rem 0 0;
   font-size: 2rem;
   font-weight: 700;
-  color: #f5576c;
+  color: #141414;
 }
 
 .quick-actions {
@@ -199,7 +213,7 @@ h1 {
 }
 
 .action-btn {
-  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  background: linear-gradient(135deg, #67edff 0%, #585bfc 100%);
   color: white;
   padding: 1.5rem;
   border-radius: 1rem;
@@ -278,7 +292,7 @@ h1 {
 .status-count {
   font-size: 1.3rem;
   font-weight: 700;
-  color: #f5576c;
+  color: #e62121;
 }
 
 .status-badge {

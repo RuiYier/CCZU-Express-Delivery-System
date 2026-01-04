@@ -80,7 +80,7 @@ const handleLogout = () => {
 
 .sidebar {
   width: 280px;
-  background: linear-gradient(180deg, #f093fb 0%, #f5576c 100%);
+  background: linear-gradient(135deg, #4ab8f8 0%, #2c4bf8 100%);
   color: white;
   display: flex;
   flex-direction: column;
