@@ -213,7 +213,7 @@ func DeleteUser(db *gorm.DB) gin.HandlerFunc {
 		ctx, cancel := context.WithTimeout(c, 30*time.Second)
 		defer cancel()
 
-		if err := db.WithContext(ctx).First(&user).Error; err != nil {
+		if err := db.WithContext(ctx).Where("user_id = ?", c.Param("user_id")).First(&user).Error; err != nil {
 			if err == gorm.ErrRecordNotFound {
 				c.JSON(http.StatusNotFound, gin.H{"error": "user not found"})
 				return
