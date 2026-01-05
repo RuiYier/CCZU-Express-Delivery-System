@@ -82,11 +82,9 @@
           <div class="form-group">
             <label>状态</label>
             <select v-model="editForm.pack_status" required>
-              <option value="pending">待取</option>
-              <option value="arrived">已到达</option>
+              <option value="pending">待出库</option>
               <option value="checked_out">已取件</option>
               <option value="in_transit">运输中</option>
-              <option value="shipped">已发货</option>
               <option value="cancelled">已取消</option>
             </select>
           </div>
@@ -137,10 +135,10 @@ const editForm = ref({
 
 const statusFilters = [
   { label: '全部', value: 'all' },
-  { label: '待取', value: 'pending' },
-  { label: '已到达', value: 'arrived' },
+  { label: '待出库', value: 'pending' },
   { label: '运输中', value: 'in_transit' },
-  { label: '已取件', value: 'checked_out' }
+  { label: '已出库', value: 'checked_out' },
+  { label: '已取消', value: 'cancelled' }
 ]
 
 const filteredPacks = computed(() => {
@@ -153,11 +151,9 @@ const filteredPacks = computed(() => {
 const getStatusText = (status: string) => {
   const statusMap: Record<string, string> = {
     pending: '待取',
-    arrived: '已到达',
     checked_out: '已取件',
-    in_transit: '运输中',
-    shipped: '已发货',
-    cancelled: '已取消'
+    cancelled: '已取消',
+    in_transit: '运输中'
   }
   return statusMap[status] || status
 }
@@ -220,7 +216,7 @@ const handleUpdate = async () => {
 
 const updateStatus = async (pack: Pack) => {
   const newStatus = prompt(
-    '请输入新状态 (pending/arrived/checked_out/in_transit/shipped/cancelled):',
+    '请输入新状态 (pending/checked_out/cancelled/in_transit):',
     pack.pack_status
   )
 
@@ -378,8 +374,7 @@ h1 {
   color: #388e3c;
 }
 
-.pack-status.in_transit,
-.pack-status.shipped {
+.pack-status.in_transit{
   background: #fff3e0;
   color: #f57c00;
 }

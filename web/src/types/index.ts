@@ -33,8 +33,7 @@ export interface AuthResponse {
 }
 
 // 包裹状态类型
-export type PackStatus = 'pending' | 'checked_out' | 'in_transit' | 'cancelled' | 'arrived' | 'shipped'
-
+export type PackStatus = 'pending' | 'checked_out' |'cancelled' | 'in_transit'
 // 包裹信息
 export interface Pack {
   pack_id: number
