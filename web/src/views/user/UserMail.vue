@@ -53,7 +53,7 @@
               id="recipient_phone"
               v-model="formData.recipient_phone"
               type="tel"
-              placeholder="必须是系统内已注册用户"
+              placeholder="请输入收件人手机号"
               required
             />
             <small>收件人必须是系统内已注册用户</small>
@@ -83,7 +83,9 @@
     </div>
 
     <div v-if="successMessage" class="success-card">
-      <div class="success-icon">✅</div>
+      <div class="success-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+      </div>
       <h3>寄件成功！</h3>
       <p>{{ successMessage }}</p>
       <button @click="successMessage = ''" class="btn-close">知道了</button>

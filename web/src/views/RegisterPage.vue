@@ -85,8 +85,8 @@
                 <input type="radio" v-model="formData.role" value="user" />
                 <span>普通用户</span>
               </label>
-              <label class="radio-label">
-                <input type="radio" v-model="formData.role" value="admin" />
+              <label class="radio-label" title="当前不允许注册管理员">
+                <input type="radio" v-model="formData.role" value="admin" disabled/>
                 <span>管理员</span>
               </label>
             </div>

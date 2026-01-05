@@ -4,7 +4,9 @@
 
     <div class="stats-grid">
       <div class="stat-card">
-        <div class="stat-icon">📥</div>
+        <div class="stat-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 16 12 14 15 10 15 8 12 2 12"></polyline><path d="M5.45 5.11L2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"></path></svg>
+        </div>
         <div class="stat-info">
           <h3>待取包裹</h3>
           <p class="stat-value">{{ pendingCount }}</p>
@@ -12,7 +14,9 @@
       </div>
 
       <div class="stat-card">
-        <div class="stat-icon">📤</div>
+        <div class="stat-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+        </div>
         <div class="stat-info">
           <h3>寄件中</h3>
           <p class="stat-value">{{ inTransitCount }}</p>
@@ -20,7 +24,9 @@
       </div>
 
       <div class="stat-card">
-        <div class="stat-icon">✅</div>
+        <div class="stat-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+        </div>
         <div class="stat-info">
           <h3>已取包裹</h3>
           <p class="stat-value">{{ checkedOutCount }}</p>
@@ -28,7 +34,9 @@
       </div>
 
       <div class="stat-card">
-        <div class="stat-icon">📊</div>
+        <div class="stat-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+        </div>
         <div class="stat-info">
           <h3>总计</h3>
           <p class="stat-value">{{ totalCount }}</p>
@@ -40,11 +48,15 @@
       <h2>快捷操作</h2>
       <div class="action-buttons">
         <router-link to="/user/packs" class="action-btn">
-          <span class="action-icon">📦</span>
+          <span class="action-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+          </span>
           <span>查看包裹</span>
         </router-link>
         <router-link to="/user/mail" class="action-btn">
-          <span class="action-icon">📤</span>
+          <span class="action-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+          </span>
           <span>我要寄件</span>
         </router-link>
       </div>

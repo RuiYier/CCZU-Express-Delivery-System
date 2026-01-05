@@ -18,7 +18,7 @@
 
       <!-- 功能展示 - 单行排列，无边框 -->
       <div class="features-row">
-        <div class="feature-item">
+        <div class="feature-item" @click="router.push('/login')">
           <div class="icon-wrapper">
             <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
           </div>
@@ -26,7 +26,7 @@
           <p>智能扫码，快速入库</p>
         </div>
 
-        <div class="feature-item">
+        <div class="feature-item" @click="router.push('/login')">
           <div class="icon-wrapper">
             <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
           </div>
@@ -34,7 +34,7 @@
           <p>便捷下单，上门取件</p>
         </div>
 
-        <div class="feature-item">
+        <div class="feature-item" @click="router.push('/login')">
           <div class="icon-wrapper">
             <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
           </div>
@@ -42,7 +42,7 @@
           <p>物流状态，随时掌握</p>
         </div>
 
-        <div class="feature-item">
+        <div class="feature-item" @click="router.push('/login')">
           <div class="icon-wrapper">
             <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
           </div>
@@ -145,12 +145,12 @@ onMounted(() => {
   font-weight: 800;
   margin: 0;
   letter-spacing: 2px;
-  background: linear-gradient(to right, #000000 0%,#242424 30%,#707070 45%,#494949 60%,#272727 75%,#000000 100%);
+  background: linear-gradient(to right, #000000c9 0%,#242424c9 40%,#8d8d8d 45%,#494949 50%,#272727c9 75%,#000000c9 100%);
   background-size: 200% 100%;
   color: transparent;
   -webkit-background-clip: text;
   background-clip: text;
-  animation: shine 10s linear infinite;
+  animation: shine 6s linear infinite;
   text-shadow: 
   0 2px 2px rgba(68, 68, 68, 0.2);
 }
@@ -192,6 +192,7 @@ onMounted(() => {
   border: 1px solid rgba(255, 255, 255, 0.5);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
 }
 
 .feature-item:hover {

@@ -6,13 +6,18 @@
       <div class="search-box">
         <input v-model="searchQuery" type="text" placeholder="搜索用户（姓名、学号、手机号）" />
       </div>
-      <button @click="fetchData" class="btn-refresh">🔄 刷新</button>
+      <button @click="fetchData" class="btn-refresh">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 4v6h-6"></path><path d="M1 20v-6h6"></path><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path></svg>
+        刷新
+      </button>
     </div>
 
     <div v-if="isLoading" class="loading">加载中...</div>
 
     <div v-else-if="filteredUsers.length === 0" class="empty">
-      <div class="empty-icon">👥</div>
+      <div class="empty-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+      </div>
       <p>暂无用户数据</p>
     </div>
 
@@ -20,7 +25,7 @@
       <table class="users-table">
         <thead>
           <tr>
-            <th>用户ID</th>
+            <!-- <th>用户ID</th> -->
             <th>姓名</th>
             <th>学号</th>
             <th>手机号</th>
@@ -32,7 +37,7 @@
         </thead>
         <tbody>
           <tr v-for="user in filteredUsers" :key="user.user_id">
-            <td>{{ user.user_id }}</td>
+            <!-- <td>{{ user.user_id }}</td> -->
             <td class="user-name">{{ user.user_name }}</td>
             <td class="student-id">{{ user.student_id }}</td>
             <td>{{ user.phone }}</td>
@@ -42,7 +47,7 @@
                 {{ user.role === 'admin' ? '管理员' : '用户' }}
               </span>
             </td>
-            <td>{{ formatTime(user.created_at) }}</td>
+            <td>{{ formatTime(user.register_time) }}</td>
             <td>
               <button 
                 v-if="user.user_id !== authStore.user?.user_id" 
@@ -70,7 +75,6 @@ import { ref, computed, onMounted } from 'vue'
 import { useAuthStore } from '@/stores/auth'
 import { adminApi } from '@/api'
 import type { User } from '@/types'
-
 const authStore = useAuthStore()
 const users = ref<User[]>([])
 const isLoading = ref(false)
@@ -87,6 +91,7 @@ const filteredUsers = computed(() => {
       user.phone.includes(query)
   )
 })
+
 
 const adminCount = computed(() => users.value.filter((u) => u.role === 'admin').length)
 const userCount = computed(() => users.value.filter((u) => u.role === 'user').length)
@@ -169,12 +174,12 @@ h1 {
 
 .search-box input:focus {
   outline: none;
-  border-color: #f5576c;
+  border-color: #6d70fc;
 }
 
 .btn-refresh {
-  padding: 0.875rem 1.5rem;
-  background: #f5576c;
+  padding: 0.75rem 1.5rem;
+  background: #6d70fc;
   color: white;
   border: none;
   border-radius: 0.5rem;
@@ -185,7 +190,7 @@ h1 {
 }
 
 .btn-refresh:hover {
-  background: #d94558;
+  background: #404dff;
 }
 
 .loading,
@@ -298,7 +303,7 @@ h1 {
 }
 
 .stats strong {
-  color: #f5576c;
+  color: #5c5c5c;
   font-size: 1.2rem;
   margin-left: 0.5rem;
 }

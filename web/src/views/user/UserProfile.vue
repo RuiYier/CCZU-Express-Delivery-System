@@ -72,11 +72,11 @@
         </div>
         <div class="info-item">
           <label>注册时间</label>
-          <span>{{ formatTime(authStore.user?.created_at) }}</span>
+          <span>{{ formatTime(authStore.user?.register_time) }}</span>
         </div>
         <div class="info-item">
           <label>更新时间</label>
-          <span>{{ formatTime(authStore.user?.updated_at) }}</span>
+          <span>{{ formatTime(authStore.user?.register_time) }}</span>
         </div>
       </div>
     </div>
