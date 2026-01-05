@@ -29,6 +29,7 @@ func ProtectedRoutes(db *gorm.DB, router *gin.Engine, jwtCfg models.JWTConfig) {
 			admin.GET("/packs", controllers.GetAllPacks(db))
 			admin.PUT("/pack", controllers.AdminUpdatePack(db))
 			admin.DELETE("/deleteUser/:user_id", controllers.DeleteUser(db))
+			admin.GET("/usage", controllers.GetSystemStatus())
 		}
 	}
 }
