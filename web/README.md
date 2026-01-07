@@ -84,19 +84,12 @@ npm run build
 
 ##  后端API配置
 
-后端API地址在开发环境下通过 Vite 代理转发，配置在 `vite.config.ts`：
+后端API地址在开发环境下通过 Vite 代理转发，配置在 `web/.env`：
 
 ```typescript
-proxy: {
-  '/api': {
-    target: 'http://192.168.10.40:8088', // 修改为你的后端地址
-    changeOrigin: true,
-    rewrite: (path) => path.replace(/^\/api/, '')
-  }
-}
+Server_IP="输入你的后端地址"
 ```
 
-请确保 `src/api/client.ts` 中的 `baseURL` 指向正确的 API 地址。
 
 ##  路由结构
 
