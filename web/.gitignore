@@ -25,7 +25,6 @@ coverage
 *.sw?
 *.bat
 *.tsbuildinfo
-
 .eslintcache
 
 # Cypress
