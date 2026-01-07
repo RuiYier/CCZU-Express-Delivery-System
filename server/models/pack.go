@@ -3,10 +3,10 @@ package models
 import "time"
 
 type Pack struct {
-	PackId       int64     `gorm:"primaryKey;autoIncrement" json:"pack_id"`
-	UserId       int64     `gorm:"not null;index" json:"user_id"`
+	PackId       int64     `gorm:"primaryKey;index:idx_pack_id,type:btree" json:"pack_id"`
+	UserId       int64     `gorm:"not null;index:idx_packs_user_id,type:btree" json:"user_id"`
 	PackStatus   string    `gorm:"type:varchar(20);default:'pending'" json:"pack_status"`
-	PickupCode   string    `gorm:"type:varchar(10)" json:"pickup_code"`
+	PickupCode   string    `gorm:"type:varchar(10);index:idx_pickup_code,type:btree" json:"pickup_code"`
 	CheckInTime  time.Time `gorm:"autoCreateTime" json:"check_in_time"`
 	CheckOutTime time.Time `json:"check_out_time"`
 }

@@ -5,14 +5,14 @@ import (
 )
 
 type User struct {
-	UserId       int64     `gorm:"primaryKey;autoIncrement" json:"user_id"`
+	UserId       int64     `gorm:"primaryKey;index:idx_user_id,type:btree" json:"user_id"`
 	UserName     string    `gorm:"type:varchar(100);not null" json:"user_name"`
 	PasswordHash string    `gorm:"type:varchar(255);not null" json:"-"`
-	StudentId    string    `gorm:"type:varchar(50);unique;not null" json:"student_id"`
+	StudentId    string    `gorm:"type:varchar(50);unique;not null;index:idx_student_id,type:btree" json:"student_id"`
 	Phone        string    `gorm:"type:varchar(20);unique;not null" json:"phone"`
 	Address      string    `gorm:"type:varchar(255)" json:"address"`
-	Role         string    `gorm:"type:varchar(20);default:'user'" json:"role"`
-	RegisterTime time.Time `gorm:"autoCreateTime" json:"register_time"`
+	Role         string    `gorm:"type:varchar(20);default:'user';not null" json:"role"`
+	RegisterTime time.Time `gorm:"autoCreateTime;not null" json:"register_time"`
 }
 
 type UserLogin struct {
