@@ -1,16 +1,37 @@
-FROM golang:1.23-alpine AS builder
+FROM golang:1.25-alpine AS builder
 
 ENV CGO_ENABLED=0 GOOS=linux GOARCH=amd64
 
 WORKDIR /src
 
+# Copy only the server module files first for better cache
+COPY server/go.mod server/go.sum ./server/
+WORKDIR /src/server
+RUN go mod download
 
-# 复制全部源码（在构建上下文为仓库根时）
+# Copy rest of the repository
+WORKDIR /src
 COPY . .
-# 下载依赖（利用 go.mod 缓存）
-RUN go mod tidy
 
-# 构建二进制
-RUN go build ./...
+# Build the server binary from the server module
+WORKDIR /src/server
+RUN go build -o /app/server .
 
-ENTRYPOINT ["go", "run", "."]
+FROM alpine:3.18
+
+# runtime dependencies if any
+RUN apk add --no-cache ca-certificates
+
+WORKDIR /app
+
+# Copy binary from builder
+COPY --from=builder /app/server /app/server
+
+# Prepare config directory (will be mounted by docker-compose in dev)
+RUN mkdir -p /app/config
+
+ENV CONFIG_PATH=/app/config/config.toml
+
+EXPOSE 8088
+
+ENTRYPOINT ["/app/server"]

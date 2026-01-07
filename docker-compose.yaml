@@ -12,9 +12,12 @@ services:
     restart: unless-stopped
     volumes:
       # 将本地配置挂载到容器，方便在开发/部署时通过修改 config.toml 控制数据库等
-      - ./server/config/config.toml:/src/config/config.toml:ro
+      - ./server/config:/app/config:ro
     environment:
       - GIN_MODE=release
+      - CONFIG_PATH=/app/config/config.toml
+    networks:
+      - appnet
 
   frontend:
     build:
@@ -25,8 +28,15 @@ services:
     ports:
       - "80:80"
     restart: unless-stopped
+    volumes:
+      # 如果你有运行时需要的前端环境文件，可以挂载到静态目录（注意：前端通常在构建时读取 env）
+      - ./web/.env:/usr/share/nginx/html/.env:ro
+    depends_on:
+      - backend
+    networks:
+      - appnet
 
 networks:
-  default:
+  appnet:
     driver: bridge
 
