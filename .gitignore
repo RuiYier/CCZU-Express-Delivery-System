@@ -25,9 +25,6 @@ Thumbs.db
 /web/npm-debug.log*
 /web/yarn-error.log*
 /web/pnpm-debug.log*
-/web/.env
-/web/.env.local
-/web/.env.*.local
 /web/.eslintcache
 
 # Logs
